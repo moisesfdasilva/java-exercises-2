@@ -1,7 +1,7 @@
 package structurestack;
 
 /**
- *
+ * This class runs this project
  * @author m-silva
  */
 public class StructureStack {

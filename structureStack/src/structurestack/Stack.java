@@ -1,7 +1,7 @@
 package structurestack;
 
 /**
- * This class create a stack
+ * This class creates a stack
  * @author m-silva
  */
 public class Stack {
