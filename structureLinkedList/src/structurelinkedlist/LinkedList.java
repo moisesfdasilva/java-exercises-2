@@ -1,12 +1,12 @@
-package structurestack;
+package structurelinkedlist;
 
 /**
  * This class creates a stack
- * @author mf-silva
+ * @author m-silva
  */
-public class Stack {
+public class LinkedList {
     
-    public Stack() {
+    public LinkedList() {
         // Default constructor.
     }
     
@@ -18,7 +18,7 @@ public class Stack {
     private Node firstNode;
     private Node lastNode;
     
-    public void push(int number) {
+    public void add(int number) {
         Node newNode = new Node();
         newNode.number = number;
         
@@ -31,17 +31,16 @@ public class Stack {
         }
     }
     
-    public int pop() {
+    public int remove() {
         int response = 0;
         
         if(this.firstNode == null) {
             System.out.println("Stack overflow!");
-        } else if (this.lastNode != null) {
+        } else if (this.lastNode == null) {
+            System.out.println("Stack overflow!");
+        } else {
             response = this.lastNode.number;
             this.lastNode = this.lastNode.node;
-        } else {
-            this.firstNode = null;
-            System.out.println("Stack overflow!");
         }
         
         return response;

@@ -2,13 +2,13 @@ package structurestack;
 
 /**
  * This class runs this project
- * @author m-silva
+ * @author mf-silva
  */
 public class StructureStack {
 
     /**
      * @param args the command line arguments
-     * This method run the stack
+     * This method runs a stack
      */
     public static void main(String[] args) {
         Stack stack = new Stack();
