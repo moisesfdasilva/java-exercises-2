@@ -1,0 +1,48 @@
+package sortingmethods;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * This class runs this project
+ * @author mf-silva
+ */
+public class SortingMethods {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        runBoobleSort();
+    }
+    
+    private static void runBoobleSort() {
+        List<Integer> list = new ArrayList<>(
+                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
+        
+        System.out.println("************************************");
+        System.out.println("BoobleSort");
+        
+        System.out.println("------------------------------------");
+        System.out.println("Unordered list");
+
+        for(Integer num : list) {
+            System.out.print(num + " ");
+        }
+        
+        System.out.println();
+        
+        BoobleSort.sort(list);
+        
+        System.out.println("------------------------------------");
+        System.out.println("Ordered list");
+        
+        for(Integer num : list) {
+            System.out.print(num + " ");
+        }
+        
+        System.out.println();
+        System.out.println("************************************");
+    }
+}
