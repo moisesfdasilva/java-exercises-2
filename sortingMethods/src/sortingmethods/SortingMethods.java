@@ -16,6 +16,7 @@ public class SortingMethods {
     public static void main(String[] args) {
         runBoobleSort();
         runSelectionSort();
+        runInsertionSort();
     }
     
     private static void runBoobleSort() {
@@ -64,6 +65,35 @@ public class SortingMethods {
         System.out.println();
         
         SelectionSort.sort(list);
+        
+        System.out.println("------------------------------------");
+        System.out.println("Ordered list");
+        
+        for(Integer num : list) {
+            System.out.print(num + " ");
+        }
+        
+        System.out.println();
+        System.out.println("************************************");
+    }
+    
+    private static void runInsertionSort() {
+        List<Integer> list = new ArrayList<>(
+                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
+        
+        System.out.println("************************************");
+        System.out.println("InsertionSort");
+        
+        System.out.println("------------------------------------");
+        System.out.println("Unordered list");
+
+        for(Integer num : list) {
+            System.out.print(num + " ");
+        }
+        
+        System.out.println();
+        
+        InsertionSort.sort(list);
         
         System.out.println("------------------------------------");
         System.out.println("Ordered list");
