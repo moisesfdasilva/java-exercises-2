@@ -3,7 +3,7 @@ package sortingmethods;
 import java.util.List;
 
 /**
- * This class creates the QuickSort Method
+ * This class creates the QuickSort Method.
  * @author mf-silva
  */
 public class QuickSort {
