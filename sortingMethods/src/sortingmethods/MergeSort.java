@@ -8,6 +8,28 @@ import java.util.List;
  * @author mf-silva
  */
 public class MergeSort {
+    
+    private static void merge(List<Integer> list, List<Integer> listOne, 
+            List<Integer> listTwo) {
+        int topOne = 0, topTwo = 0;
+        
+        for(int i = 0; i < list.size(); i++) {
+            if(topOne >= listOne.size()) {
+              list.set(i, listTwo.get(topTwo));
+              topTwo++;
+            } else if(topTwo >= listTwo.size()) {
+              list.set(i, listOne.get(topOne));
+              topOne++;
+            } else if(listOne.get(topOne) < listTwo.get(topTwo)) {
+              list.set(i, listOne.get(topOne));
+              topOne++;
+            } else {
+              list.set(i, listTwo.get(topTwo));
+              topTwo++;
+            }
+        }
+    }
+    
     public static void sort(List<Integer> list) {
         if(list.size() > 1) {
             int midIndex = list.size() / 2;
@@ -31,27 +53,6 @@ public class MergeSort {
     
             merge(list, listOne, listTwo);
           }
-    }
-    
-    public static void merge(List<Integer> list, List<Integer> listOne, 
-            List<Integer> listTwo) {
-        int topOne = 0, topTwo = 0;
-        
-        for(int i = 0; i < list.size(); i++) {
-            if(topOne >= listOne.size()) {
-              list.set(i, listTwo.get(topTwo));
-              topTwo++;
-            } else if(topTwo >= listTwo.size()) {
-              list.set(i, listOne.get(topOne));
-              topOne++;
-            } else if(listOne.get(topOne) < listTwo.get(topTwo)) {
-              list.set(i, listOne.get(topOne));
-              topOne++;
-            } else {
-              list.set(i, listTwo.get(topTwo));
-              topTwo++;
-            }
-        }
     }
 
 }

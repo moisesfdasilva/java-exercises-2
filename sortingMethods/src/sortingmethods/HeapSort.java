@@ -7,7 +7,7 @@ import java.util.List;
  * @author mf-silva
  */
 public class HeapSort {
-    public static void heapfy(List<Integer> list, int i, int len) {
+    private static void heapfy(List<Integer> list, int i, int len) {
         int max = i, aux;
         int childA = 2 * i + 1;
         int childB = 2 * i + 2;
@@ -29,7 +29,7 @@ public class HeapSort {
         }
     }
 
-    public static void buildMaxHeap(List<Integer> list) {
+    private static void buildMaxHeap(List<Integer> list) {
         for(int i = ((list.size() - 1) / 2); i >= 0; i--) {
             heapfy(list, i, list.size());
         }
