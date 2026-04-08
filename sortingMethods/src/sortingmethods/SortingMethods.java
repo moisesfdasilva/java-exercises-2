@@ -1,8 +1,8 @@
 package sortingmethods;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * This class runs this project
@@ -14,185 +14,62 @@ public class SortingMethods {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        runBoobleSort();
-        runSelectionSort();
-        runInsertionSort();
-        runMergeSort();
-        runHeapSort();
-        runQuickSort();
+        List listA = createList();
+        printList(listA, "BoobleSort", "Unordered list");
+        BoobleSort.sort(listA);
+        printList(listA, "BoobleSort", "Ordered list");
+        
+        List listB = createList();
+        printList(listB, "SelectionSort", "Unordered list");
+        SelectionSort.sort(listB);
+        printList(listB, "SelectionSort", "Ordered list");
+        
+        List listC = createList();
+        printList(listC, "InsertionSort", "Unordered list");
+        InsertionSort.sort(listC);
+        printList(listC, "InsertionSort", "Ordered list");
+        
+        List listD = createList();
+        printList(listD, "MergeSort", "Unordered list");
+        MergeSort.sort(listD);
+        printList(listD, "MergeSort", "Ordered list");
+        
+        List listE = createList();
+        printList(listE, "HeapSort", "Unordered list");
+        HeapSort.sort(listE);
+        printList(listE, "HeapSort", "Ordered list");
+        
+        List listF = createList();
+        printList(listF, "QuickSort", "Unordered list");
+        MergeSort.sort(listF);
+        printList(listF, "QuickSort", "Ordered list");
     }
     
-    private static void runBoobleSort() {
-        List<Integer> list = new ArrayList<>(
-                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
+    private static List createList() {
+        List<Integer> list = new ArrayList<>();
         
-        System.out.println("************************************");
-        System.out.println("BoobleSort");
+        Random gerador = new Random();
+        int i, num;
         
-        System.out.println("------------------------------------");
-        System.out.println("Unordered list");
+        for(i = 0; i < 20; i++) {
+            num = gerador.nextInt(100);
+            list.add(num);
+        }
+        
+        return list;
+    }
+    
+    private static void printList(List<Integer> list, String method,
+            String type) {
+        System.out.println("************************************************" + 
+                "************");
+        System.out.println(method + " - " + type);
 
         for(Integer num : list) {
             System.out.print(num + " ");
         }
-        
+
         System.out.println();
-        
-        BoobleSort.sort(list);
-        
-        System.out.println("------------------------------------");
-        System.out.println("Ordered list");
-        
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        System.out.println("************************************");
     }
     
-    private static void runSelectionSort() {
-        List<Integer> list = new ArrayList<>(
-                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
-        
-        System.out.println("************************************");
-        System.out.println("SelectionSort");
-        
-        System.out.println("------------------------------------");
-        System.out.println("Unordered list");
-
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        
-        SelectionSort.sort(list);
-        
-        System.out.println("------------------------------------");
-        System.out.println("Ordered list");
-        
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        System.out.println("************************************");
-    }
-    
-    private static void runInsertionSort() {
-        List<Integer> list = new ArrayList<>(
-                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
-        
-        System.out.println("************************************");
-        System.out.println("InsertionSort");
-        
-        System.out.println("------------------------------------");
-        System.out.println("Unordered list");
-
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        
-        InsertionSort.sort(list);
-        
-        System.out.println("------------------------------------");
-        System.out.println("Ordered list");
-        
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        System.out.println("************************************");
-    }
-    
-    private static void runMergeSort() {
-        List<Integer> list = new ArrayList<>(
-                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
-        
-        System.out.println("************************************");
-        System.out.println("MergeSort");
-        
-        System.out.println("------------------------------------");
-        System.out.println("Unordered list");
-
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        
-        MergeSort.sort(list);
-        
-        System.out.println("------------------------------------");
-        System.out.println("Ordered list");
-        
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        System.out.println("************************************");
-    }
-    
-    private static void runHeapSort() {
-        List<Integer> list = new ArrayList<>(
-                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
-        
-        System.out.println("************************************");
-        System.out.println("HeapSort");
-        
-        System.out.println("------------------------------------");
-        System.out.println("Unordered list");
-
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        
-        HeapSort.sort(list);
-        
-        System.out.println("------------------------------------");
-        System.out.println("Ordered list");
-        
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        System.out.println("************************************");
-    }
-    
-    private static void runQuickSort() {
-        List<Integer> list = new ArrayList<>(
-                Arrays.asList(8, 5, 6, 9, 10, 1, 4, 3, 7, 2));
-        
-        System.out.println("************************************");
-        System.out.println("QuickSort");
-        
-        System.out.println("------------------------------------");
-        System.out.println("Unordered list");
-
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        
-        QuickSort.sort(list);
-        
-        System.out.println("------------------------------------");
-        System.out.println("Ordered list");
-        
-        for(Integer num : list) {
-            System.out.print(num + " ");
-        }
-        
-        System.out.println();
-        System.out.println("************************************");
-    }
 }
