@@ -48,6 +48,11 @@ public class SortingMethods {
         printList(listG, "CountingSort", "Unordered list");
         CountingSort.sort(listG);
         printList(listG, "CountingSort", "Ordered list");
+        
+        List listH = createList();
+        printList(listH, "ShellSort", "Unordered list");
+        CountingSort.sort(listH);
+        printList(listH, "ShellSort", "Ordered list");
     }
     
     private static List createList() {
