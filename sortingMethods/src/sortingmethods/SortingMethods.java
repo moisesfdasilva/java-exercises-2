@@ -43,6 +43,11 @@ public class SortingMethods {
         printList(listF, "QuickSort", "Unordered list");
         MergeSort.sort(listF);
         printList(listF, "QuickSort", "Ordered list");
+        
+        List listG = createList();
+        printList(listG, "CountingSort", "Unordered list");
+        CountingSort.sort(listG);
+        printList(listG, "CountingSort", "Ordered list");
     }
     
     private static List createList() {
