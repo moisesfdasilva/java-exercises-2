@@ -28,15 +28,15 @@ public class ShellSort {
                         j = j - h;
                     }
                 }
-                h = (h - 1) / 3;
             }
+            h = (h - 1) / 3;
         }
     }
     
     public static void sort(List<Integer> list) {
         int k = (int) ((Math.log(list.size() + 1) / Math.log(3)) + 0.5);
         
-        int h = (int) (Math.pow(3, k) - 1) / 2;
+        int h = (int) ((Math.pow(3, k) - 1) / 2);
         
         shellSort(list, k, h);
     }
