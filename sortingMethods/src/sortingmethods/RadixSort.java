@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This class creates the RadixSort Method.
+ * This class creates the RadixSort Method
  * @author mf-silva
  */
 public class RadixSort {
