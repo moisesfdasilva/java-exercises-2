@@ -1,6 +1,7 @@
 package sortingmethods;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,52 +10,33 @@ import java.util.List;
  */
 public class RadixSort {
     private static void countsort(List<Integer> list, int pos) {
-        int i, aux;
+        int[] countList = new int[10];
+        List<Integer> outputList = Arrays.asList(new Integer[list.size()]);
         
-        List<Integer> auxList = Arrays.asList(new Integer[list.size() + 1]);
-        
-        int max = (list.get(0) / pos) % 10;
-        
-        for (i = 1; i < list.size(); i++) {
-            if (((list.get(i) / pos) % 10) > max){
-                max = list.get(i);
-            }
+        for (int i = 0; i < list.size(); i++) {
+            countList[(list.get(i) / pos) % 10] += 1;
         }
         
-        List<Integer> countList = Arrays.asList(new Integer[list.size() + 1]);
+        for (int i = 1; i < 10; i++) { 
+            countList[i] = countList[i] + countList[i - 1];
+        }
         
-        for (i = 0; i < max; ++i) {
-            countList.set(i, 0);
+        for (int i = list.size() - 1; i >= 0; i--) {
+            int index = (list.get(i) / pos) % 10;
+            outputList.set(countList[index] - 1, list.get(i));
+            countList[index] -= 1;
         }
-        for (i = 0; i < list.size(); i++){
-            aux = (list.get(i) / pos) % 10;
-            countList.set(aux, aux + 1);
-        }
-        for (i = 1; i < 10; i++) {
-            countList.set(i, countList.get(i) + countList.get(i - 1));
-        }
-        for (i = list.size() - 1; i >= 0; i--) {
-            aux = (list.get(i) / pos) % 10;
-            auxList.set(auxList.get(aux) - 1, list.get(i));
-            countList.set(aux, countList.get(aux) - 1);
-        }
-        for (i = 0; i < list.size(); i++) {
-            list.set(i, auxList.get(i));
+        
+        for (int i = 0; i < list.size(); i++) {
+            list.set(i, outputList.get(i));
         }
     }
     
     public static void sort(List<Integer> list) {
-        int i;
-        int max = list.get(0);
+        int max = Collections.max(list);
         
-        for (i = 1; i < list.size(); i++) {
-            if (list.get(i) > max) {
-                max = list.get(i);
-            }
-        }
-        
-        for (i = 1; max / i > 0; i *= 10) {
-            countsort(list, i);
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            countsort(list, exp);
         }
     }
 
