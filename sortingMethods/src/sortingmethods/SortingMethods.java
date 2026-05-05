@@ -53,11 +53,16 @@ public class SortingMethods {
         printList(listH, "ShellSort", "Unordered list");
         ShellSort.sort(listH);
         printList(listH, "ShellSort", "Ordered list");
+//        
+//        List listI = createList();
+//        printList(listI, "RadixSort", "Unordered list");
+//        RadixSort.sort(listI);
+//        printList(listI, "RadixSort", "Ordered list");
         
-        List listI = createList();
-        printList(listI, "RadixSort", "Unordered list");
-        CountingSort.sort(listI);
-        printList(listI, "RadixSort", "Ordered list");
+        List listJ = createList();
+        printList(listJ, "BucketSort", "Unordered list");
+        BucketSort.sort(listJ);
+        printList(listJ, "BucketSort", "Ordered list");
     }
     
     private static List createList() {
