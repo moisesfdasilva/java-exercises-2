@@ -63,6 +63,11 @@ public class SortingMethods {
         printList(listJ, "BucketSort", "Unordered list");
         BucketSort.sort(listJ);
         printList(listJ, "BucketSort", "Ordered list");
+        
+        List listK = createList();
+        printList(listK, "CombSort", "Unordered list");
+        CombSort.sort(listK);
+        printList(listK, "CombSort", "Ordered list");
     }
     
     private static List createList() {
