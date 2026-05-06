@@ -33,7 +33,7 @@ public class QuickSort {
         if(low < high) {
             int pivotIndex = partition(list, low, high);
 
-            quickSort(list, low, pivotIndex);
+            quickSort(list, low, pivotIndex - 1);
             quickSort(list, (pivotIndex + 1), high);
         }
     }

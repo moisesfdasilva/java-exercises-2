@@ -41,7 +41,7 @@ public class SortingMethods {
         
         List listF = createList();
         printList(listF, "QuickSort", "Unordered list");
-        MergeSort.sort(listF);
+        QuickSort.sort(listF);
         printList(listF, "QuickSort", "Ordered list");
         
         List listG = createList();
