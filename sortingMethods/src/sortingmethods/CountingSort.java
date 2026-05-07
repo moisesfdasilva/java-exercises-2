@@ -8,6 +8,7 @@ import java.util.List;
  * @author mf-silva
  */
 public class CountingSort {
+    
     private static List<Integer> getCountList(List<Integer> list) {
         int max = list.get(0);
         int i, j, count;

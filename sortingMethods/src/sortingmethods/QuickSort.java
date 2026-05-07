@@ -7,24 +7,20 @@ import java.util.List;
  * @author mf-silva
  */
 public class QuickSort {
+    
     private static int partition(List<Integer> list, int low, int high) {
         int pivotValue = list.get(low); // median-of-three method (first, or mid, or last)
         int leftIndex = high;
-        int aux;
 
         for(int i = high; i > low; i--) {
             if(pivotValue < list.get(i)) {
-                aux = list.get(i);
-                list.set(i, list.get(leftIndex));
-                list.set(leftIndex, aux);
+                Utils.swap(list, i, leftIndex);
                 
                 leftIndex--;
             }
         }
-
-        aux = list.get(low);
-        list.set(low, list.get(leftIndex));
-        list.set(leftIndex, aux);
+        
+        Utils.swap(list, low, leftIndex);
 
         return leftIndex;
     }

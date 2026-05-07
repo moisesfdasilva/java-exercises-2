@@ -7,8 +7,9 @@ import java.util.List;
  * @author mf-silva
  */
 public class ShellSort {
+    
     public static void sort(List<Integer> list) {
-        int i, j, k, aux;
+        int i, j, k;
         
         for(i = list.size() / 2; i > 0; i = i / 2) {
             for(j = i; j < list.size(); j++) {
@@ -16,9 +17,7 @@ public class ShellSort {
                     if(list.get(k + i) >= list.get(k)) {
                         break;
                     } else {
-                        aux = list.get(k + i);
-                        list.set(k + i, list.get(k));
-                        list.set(k, aux);
+                        Utils.swap(list, k + i, k);
                     }
                 }
             }

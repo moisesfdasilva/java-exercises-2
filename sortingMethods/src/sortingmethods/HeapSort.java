@@ -7,8 +7,9 @@ import java.util.List;
  * @author mf-silva
  */
 public class HeapSort {
+    
     private static void heapfy(List<Integer> list, int i, int len) {
-        int max = i, aux;
+        int max = i;
         int childA = 2 * i + 1;
         int childB = 2 * i + 2;
         
@@ -21,9 +22,7 @@ public class HeapSort {
         }
         
         if(max != i) {
-            aux = list.get(i);
-            list.set(i, list.get(max));
-            list.set(max, aux);
+            Utils.swap(list, i, max);
             
             heapfy(list, max, len);
         }
@@ -38,12 +37,10 @@ public class HeapSort {
     public static void sort(List<Integer> list) {
         buildMaxHeap(list);
         
-        int i, aux;
+        int i;
         
         for(i = (list.size() - 1); i > 0; i--) {
-            aux = list.get(i);
-            list.set(i, list.get(0));
-            list.set(0, aux);
+            Utils.swap(list, i, 0);
             
             heapfy(list, 0, i);
         }

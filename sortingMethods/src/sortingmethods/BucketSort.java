@@ -8,6 +8,7 @@ import java.util.List;
  * @author mf-silva
  */
 public class BucketSort {
+    
     private static int getMax(List<Integer> list) {
         int max = list.get(0);
         

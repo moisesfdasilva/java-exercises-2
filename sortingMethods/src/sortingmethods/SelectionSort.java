@@ -7,8 +7,9 @@ import java.util.List;
  * @author mf-silva
  */
 public class SelectionSort {
+    
     public static void sort(List<Integer> list) {
-        int i, j, minValue, minIndex = 0, aux;
+        int i, j, minValue, minIndex = 0;
         
         for(i = 0; i < list.size(); i++) {
             minValue = list.get(i);
@@ -21,9 +22,7 @@ public class SelectionSort {
             }
             
             if(minValue != list.get(i)) {
-                aux = list.get(i);
-                list.set(i, list.get(minIndex));
-                list.set(minIndex, aux);
+                Utils.swap(list, i, minIndex);
             }
         }
     }
