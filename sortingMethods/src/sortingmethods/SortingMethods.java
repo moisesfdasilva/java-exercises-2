@@ -68,6 +68,11 @@ public class SortingMethods {
         printList(listK, "CombSort", "Unordered list");
         CombSort.sort(listK);
         printList(listK, "CombSort", "Ordered list");
+        
+        List listL = createList();
+        printList(listL, "TimSort", "Unordered list");
+        TimSort.sort(listL);
+        printList(listL, "TimSort", "Ordered list");
     }
     
     private static List createList() {
