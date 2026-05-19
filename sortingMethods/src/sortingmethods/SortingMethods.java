@@ -73,6 +73,11 @@ public class SortingMethods {
         printList(listL, "TimSort", "Unordered list");
         TimSort.sort(listL);
         printList(listL, "TimSort", "Ordered list");
+        
+        List listM = createList();
+        printList(listM, "GnomeSort", "Unordered list");
+        GnomeSort.sort(listM);
+        printList(listM, "GnomeSort", "Ordered list");
     }
     
     private static List createList() {
