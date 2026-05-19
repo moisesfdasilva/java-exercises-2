@@ -14,7 +14,7 @@ public class BoobleSort {
         for(i = 0; i < list.size(); i++) {
             for(j = 1; j < (list.size() - i); j++) {
                 if(list.get(j - 1) > list.get(j)) {
-                    Utils.swap(list, j - 1, j);
+                    Util.swap(list, j - 1, j);
                 }
             }
         }

@@ -27,7 +27,7 @@ public class CombSort {
             
             for (int i = 0; i < list.size() - gap; i ++) {
                 if(list.get(i) > list.get(i + gap)) {
-                    Utils.swap(list, i, i + gap);
+                    Util.swap(list, i, i + gap);
                     changed = 1;
                 }
             }

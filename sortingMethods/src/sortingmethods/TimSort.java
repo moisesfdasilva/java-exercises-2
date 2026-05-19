@@ -27,7 +27,7 @@ public class TimSort {
         for(i = left + 1; i < right + 1; i++) {
             j = i;
             while(j > 0 && list.get(j) < list.get(j - 1)) {
-                Utils.swap(list, j, j - 1);
+                Util.swap(list, j, j - 1);
                 j--;
             }
         }

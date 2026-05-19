@@ -22,7 +22,7 @@ public class HeapSort {
         }
         
         if(max != i) {
-            Utils.swap(list, i, max);
+            Util.swap(list, i, max);
             
             heapfy(list, max, len);
         }
@@ -40,7 +40,7 @@ public class HeapSort {
         int i;
         
         for(i = (list.size() - 1); i > 0; i--) {
-            Utils.swap(list, i, 0);
+            Util.swap(list, i, 0);
             
             heapfy(list, 0, i);
         }

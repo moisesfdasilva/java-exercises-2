@@ -6,7 +6,7 @@ import java.util.List;
  * This class creates the useful tools
  * @author mf-silva
  */
-public class Utils {
+public class Util {
     
     public static void swap(List<Integer> list, int indexA, int indexB) {
         int aux = list.get(indexA);

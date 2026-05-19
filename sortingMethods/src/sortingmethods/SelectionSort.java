@@ -22,7 +22,7 @@ public class SelectionSort {
             }
             
             if(minValue != list.get(i)) {
-                Utils.swap(list, i, minIndex);
+                Util.swap(list, i, minIndex);
             }
         }
     }

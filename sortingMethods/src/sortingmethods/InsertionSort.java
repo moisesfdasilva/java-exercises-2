@@ -14,7 +14,7 @@ public class InsertionSort {
         for(i = 1; i < list.size(); i++) {
             for(j = i; j > 0; j--) {
                 if(list.get(j) < list.get(j - 1)) {                    
-                    Utils.swap(list, j, j - 1);
+                    Util.swap(list, j, j - 1);
                 } else {
                     break;
                 }

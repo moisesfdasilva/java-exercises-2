@@ -14,13 +14,13 @@ public class QuickSort {
 
         for(int i = high; i > low; i--) {
             if(pivotValue < list.get(i)) {
-                Utils.swap(list, i, leftIndex);
+                Util.swap(list, i, leftIndex);
                 
                 leftIndex--;
             }
         }
         
-        Utils.swap(list, low, leftIndex);
+        Util.swap(list, low, leftIndex);
 
         return leftIndex;
     }

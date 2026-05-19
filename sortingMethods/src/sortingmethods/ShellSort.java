@@ -17,7 +17,7 @@ public class ShellSort {
                     if(list.get(k + i) >= list.get(k)) {
                         break;
                     } else {
-                        Utils.swap(list, k + i, k);
+                        Util.swap(list, k + i, k);
                     }
                 }
             }
