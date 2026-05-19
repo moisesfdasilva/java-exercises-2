@@ -78,6 +78,11 @@ public class SortingMethods {
         printList(listM, "GnomeSort", "Unordered list");
         GnomeSort.sort(listM);
         printList(listM, "GnomeSort", "Ordered list");
+        
+        List listN = createList();
+        printList(listN, "CocktailShakerSort", "Unordered list");
+        CocktailShakerSort.sort(listN);
+        printList(listN, "CocktailShakerSort", "Ordered list");
     }
     
     private static List createList() {
