@@ -88,6 +88,11 @@ public class SortingMethods {
         printList(listO, "OddEvenSort", "Unordered list");
         OddEvenSort.sort(listO);
         printList(listO, "OddEvenSort", "Ordered list");
+        
+        List listP = createList();
+        printList(listP, "PancakeSort", "Unordered list");
+        PancakeSort.sort(listP);
+        printList(listP, "PancakeSort", "Ordered list");
 
     }
     
