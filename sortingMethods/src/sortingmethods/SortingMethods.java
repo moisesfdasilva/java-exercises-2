@@ -83,6 +83,12 @@ public class SortingMethods {
         printList(listN, "CocktailShakerSort", "Unordered list");
         CocktailShakerSort.sort(listN);
         printList(listN, "CocktailShakerSort", "Ordered list");
+        
+        List listO = createList();
+        printList(listO, "OddEvenSort", "Unordered list");
+        OddEvenSort.sort(listO);
+        printList(listO, "OddEvenSort", "Ordered list");
+
     }
     
     private static List createList() {
