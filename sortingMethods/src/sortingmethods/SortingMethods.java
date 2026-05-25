@@ -93,6 +93,15 @@ public class SortingMethods {
         printList(listP, "PancakeSort", "Unordered list");
         PancakeSort.sort(listP);
         printList(listP, "PancakeSort", "Ordered list");
+        
+        List listQ = createList();
+        listQ.removeLast();
+        listQ.removeLast();
+        listQ.removeLast();
+        listQ.removeLast();
+        printList(listQ, "BitonicSort", "Unordered list");
+        BitonicSort.sort(listQ);
+        printList(listQ, "BitonicSort", "Ordered list");
 
     }
     
