@@ -103,6 +103,11 @@ public class SortingMethods {
         BitonicSort.sort(listQ);
         printList(listQ, "BitonicSort", "Ordered list");
 
+        List listR = createList();
+        printList(listR, "StoogeSort", "Unordered list");
+        StoogeSort.sort(listR);
+        printList(listR, "StoogeSort", "Ordered list");
+        
     }
     
     private static List createList() {
